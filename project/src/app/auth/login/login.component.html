@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="panel">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="state"><br><i class="fa-solid fa-unlock-keyhole"></i><br><h1>Login</h1></div>
+            <div class="form">
+                <input placeholder='Email' name="email" ngModel #email="ngModel" type="text" required appEmailValidator>
+                <ng-container *ngIf="email.touched">
+                       <div class="errorMessage" *ngIf="email.errors?.['required']">
+                          Email is required
+                       </div>
+                       <div class="errorMessage" *ngIf="email.errors?.['appEmailValidator']">
+                        Email is is incorect 
+                     </div>
+                </ng-container>
+                <input placeholder='Password'name="password"  ngModel #password="ngModel" type="password" required minlength="8">
+                <ng-container *ngIf="password.touched">
+                    <div class="errorMessage" *ngIf="password.errors?.['required']">
+                       Password is required
+                    </div>
+                    <div class="errorMessage" *ngIf="password.errors?.['minlength']">
+                        Password should be at least 8 symbols
+                     </div>
+             </ng-container>
+                <button class="login" [disabled]="loginForm.invalid">
+                    Login</button>
+                
+            </div>
+        </form>
+    </div>
+</div>

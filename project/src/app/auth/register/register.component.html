@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="panel">
+        <form  [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="state"><br><i class="fa-solid fa-id-card"></i><br><h1>Register</h1></div>
+            <div class="form">
+                <input placeholder='Username' type="text" formControlName="username">
+                <ng-container *ngIf="registerForm.get('username')?.touched">
+                    <div class="errorMessage" *ngIf="registerForm.get('username')?.errors?.['required']">
+                        Username is required
+                     </div>
+                    <div class="errorMessage" *ngIf="registerForm.get('username')?.errors?.['minlength']">
+                      Username must be at least 6 symbols 
+                   </div>
+                </ng-container>
+                
+                <input placeholder='Email' type="text"  formControlName="email" >
+                <ng-container *ngIf="registerForm.get('email')?.touched">
+                    <div class="errorMessage" *ngIf="registerForm.get('email')?.errors?.['required']">
+                        Email is required
+                     </div>
+                     <div class="errorMessage" *ngIf="registerForm.get('email')?.errors?.['appEmailValidator']">
+                      Email is is incorect 
+                   </div>
+                </ng-container>
+
+                <ng-container formGroupName="passwordGroup">
+                    <input placeholder='Password' type="password" formControlName="password" >
+                    <ng-container *ngIf="registerForm.get('passwordGroup')?.get('password')?.touched">
+                        <div class="errorMessage" *ngIf="registerForm.get('passwordGroup')?.get('password')?.errors?.['minlength']">
+                            Password must be at least 8 symbols 
+                         </div>
+                         <div class="errorMessage" *ngIf="registerForm.get('passwordGroup')?.get('password')?.errors?.['required']">
+                          Password required
+                       </div>
+                    </ng-container>
+                    <input placeholder='Confirm Password' type="password" formControlName="confirmPassword" >
+                    <ng-container >
+                        <div class="errorMessage" *ngIf="registerForm.get('passwordGroup')?.errors?.['matchPasswordValidator']">
+                            Confirm password should match
+                        </div>
+                    </ng-container>
+                </ng-container>
+                
+                
+                
+                <button [disabled]="registerForm.invalid" class="register">Register</button>
+            </div>
+        </form>
+        
+        
+    </div>
+</div>
