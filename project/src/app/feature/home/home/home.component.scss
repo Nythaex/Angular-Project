@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 header{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50rem;
-    width: 100vw;
     
-    color: #a807f3;
-    font-size: 5rem;
-    background: url("https://res.cloudinary.com/dclnlkn0x/image/upload/v1670200755/logo_rpe59p.png") center ;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 4rem;
+    background: url("https://res.cloudinary.com/dclnlkn0x/image/upload/v1670790387/original_aglmsi.jpg") center ;
     background-size: cover;
 }
 
+#headerContainer{
+    background: -webkit-linear-gradient(45deg, #a807f3a4, #383bf1a6);
+    border-radius: 1rem;
+}
+#headerContainer>div{
+   padding: 1rem;
+}
 #forUs{
     
     display: flex;
@@ -25,13 +33,29 @@ header{
 img{
     align-self: center;
     width: 50%;
-height: 60vh;
+    height: 60vh;
+    border-radius: 1rem;
 
 }
 p{
     width: 30%;
     padding: 4rem;
     font-size: 2.5rem;
+    
+}
+
+.iconContainer>p{
+text-align: center;
+font-size: 3rem;
+margin: 1rem;
+padding: 1rem;
+}
+
+#WorkingTimeContainer>p{
+    padding: 2rem;
+    font-size: 2.5rem;
+    width: 100%;
+    margin: 0;
 }
 i{
     font-size: 4rem;
@@ -45,7 +69,7 @@ i{
 
 #iconsInfo{
     border: #a807f3 solid 0.2rem;
-
+    
     margin: 4rem;
     padding: 4rem;
     display: flex;
@@ -58,6 +82,7 @@ i{
 }
 
 .iconContainer{
+    width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -74,6 +99,10 @@ i{
     .rowDirection{
         flex-direction: column;
         align-items: center;
+    }
+    .iconContainer{
+        width: 100%;
+        margin-top: 4rem;
     }
     img{
         width: 90%;

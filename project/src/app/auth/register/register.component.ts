@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { EmailValidatorDirective } from 'src/app/shared/validators/email-validator/email-validator.directive';
 import { matchPasswordValidator } from 'src/app/shared/validators/password-match-validator';
+import { SecretKeyValidatorDirective } from 'src/app/shared/validators/secret-key-validator/secret-key-validator.directive';
 
 
 @Component({
@@ -26,12 +27,13 @@ export class RegisterComponent  {
           confirmPassword:['']
         }
       ,{validators: matchPasswordValidator('password','confirmPassword')}
-    )
+    ),
+    secretKey: ['',[Validators.required,SecretKeyValidatorDirective.validateKey("")]],
   });
 
   register(){
-      const {username,email,passwordGroup:{password,confirmPassword}={}}=this.registerForm.value;
-      this.authService.register(username!,email!,password!,confirmPassword!);
+      // const {username,email,passwordGroup:{password,confirmPassword}={}}=this.registerForm.value;
+      // this.authService.register(username!,email!,password!,confirmPassword!);
       
 
   }

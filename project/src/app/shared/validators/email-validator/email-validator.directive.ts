@@ -32,8 +32,12 @@ export class EmailValidatorDirective implements Validator{
       if(appEmailValidator===undefined){return null};
       const regex:RegExp=new RegExp(/^\w{5,}@\w+$/);
       if(!regex.test(control.value)){
+        if(control.value===''){
+          return {appEmailValidator:false};
+        }
         return {appEmailValidator:true};
       }else{  
+        
         return {appEmailValidator:false};
       }  
     }    

@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -26,7 +27,8 @@ import { HomeModule } from './feature/home/home.module';
     AppRoutingModule,
     CoreModule,
     HomeModule,
-    ErrorComponentModule
+    ErrorComponentModule,
+    HttpClientModule
     
   ],
   providers: [],

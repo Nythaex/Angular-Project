@@ -40,7 +40,15 @@
                         </div>
                     </ng-container>
                 </ng-container>
-                
+                <input placeholder='Secret Paradise Key' type="text"  formControlName="secretKey" >
+                <ng-container *ngIf="registerForm.get('secretKey')?.touched">
+                    <div class="errorMessage" *ngIf="registerForm.get('secretKey')?.errors?.['required']">
+                        Secret key is required
+                     </div>
+                     <div class="errorMessage" *ngIf="registerForm.get('secretKey')?.errors?.['appSecretKeyValidator']">
+                      Secret Key is incorect 
+                   </div>
+                </ng-container>
                 
                 
                 <button [disabled]="registerForm.invalid" class="register">Register</button>
