@@ -19,26 +19,24 @@ export class SecretKeyValidatorDirective implements Validator{
 
   constructor() { }
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-    return SecretKeyValidatorDirective.validateKey(this.secretKeyValidator)
+    return SecretKeyValidatorDirective.validateKey()
     
   }
   
-  static validateKey(appSecretKeyValidator:String|undefined): ValidatorFn{
+  static validateKey(): ValidatorFn{
     return(control)=>{
       
-      if(appSecretKeyValidator===undefined){return null};
       
-      if(control.value!=="kP.2L~]3>Q~d5/A*u:GO[#XH_0%!Aa"){
-        console.log(1);
-        
+      
+      if(control.value!=="123"){
         if(control.value===""){
-          return {appSecretKeyValidator:false};
+          return null;
         }
         return {appSecretKeyValidator:true};
 
       }else{  
         
-        return {appSecretKeyValidator:false};
+        return null;
       }  
     }    
   }

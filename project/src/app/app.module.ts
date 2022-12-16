@@ -6,8 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
+import { ActivityModule } from './feature/activity/activity.module';
 import { ErrorComponentModule } from './feature/error-component/error-component.module';
 import { HomeModule } from './feature/home/home.module';
+import { RequestInterceptorProvider } from './shared/interceptors/request-interceptor';
+
 
 
 
@@ -19,7 +22,7 @@ import { HomeModule } from './feature/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   
   ],
   imports: [
@@ -27,11 +30,17 @@ import { HomeModule } from './feature/home/home.module';
     AppRoutingModule,
     CoreModule,
     HomeModule,
+    ActivityModule,
     ErrorComponentModule,
     HttpClientModule
+   
     
   ],
-  providers: [],
+  providers: [
+    RequestInterceptorProvider,
+    
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

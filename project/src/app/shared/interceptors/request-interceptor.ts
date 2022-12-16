@@ -1,18 +1,28 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { Injectable, Provider } from '@angular/core';
 import { Observable } from 'rxjs';
-const API_URL="http://localhost:4200/"
+const API_URL="http://localhost:8080"
 
+@Injectable()
 export class RequestInterceptor implements HttpInterceptor
 {
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {    
         if(req.url.startsWith('/api')){
             req=req.clone({
-                url:req.url.replace('/api',API_URL),withCredentials:true
+                url:req.url.replace('/api',API_URL), 
             }
             );
             
         }
-        throw new Error('Method not implemented.');
+        return next.handle(req);
     }
 
+}
+
+export const RequestInterceptorProvider:Provider=
+    {
+        provide:HTTP_INTERCEPTORS,
+        useClass:RequestInterceptor,
+        multi:true
+      
 }

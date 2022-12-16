@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { from, map, observable, Observable, of, Subject } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,24 @@ import { from, map, observable, Observable, of, Subject } from 'rxjs';
 })
 export class LoginComponent  {
   
+  constructor(private authService:AuthService,private route:Router){
+
+  }
 
   login(form:NgForm):void{
-        const LoginProp: {email:string ,password:string}=form.value;
-        console.log(LoginProp.email +"Loged");
+        const loginProp: {email:string ,password:string}=form.value;
+        this.authService.login(loginProp.email,loginProp.password).subscribe({
+          next:(user)=>{
+            if(this.authService.isLoggedIn){
+              this.route.navigate(["menu"])
+            }
+           
+          }
+        });
+       
+      
+      
+        
         
   }
 

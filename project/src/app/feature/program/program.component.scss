@@ -1,0 +1,30 @@
+.page-container{
+    background-color:  rgba(0, 0, 0, 0.918);
+    font-family: "Saira Semi Condensed", sans-serif;;
+    
+}
+.program-nav{
+  
+    display: flex;
+    justify-content: space-around;
+}       
+
+.nav-link{
+    font-weight: 700;
+    transform: skew(-20deg);
+    text-align: center;
+
+    width: 45%;
+    color: #a807f3;
+    padding: 1rem;
+   
+    font-size: 2rem;
+    text-decoration: none;
+    margin-top: 5rem;
+}
+
+.nav-link:hover{
+    background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
+    color: white;
+   
+}

@@ -1,9 +1,9 @@
 package com.example.backend.repositories;
 
-import com.example.backend.models.entities.Movie;
+import com.example.backend.models.entitie.Entertainer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MovieRepository extends JpaRepository<Movie,Long> {
+public interface EntertainerRepository extends JpaRepository<Entertainer,Long> {
 }

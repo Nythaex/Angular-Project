@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="panel">
+        <form #createForm="ngForm" (ngSubmit)="createActivity(createForm)">
+          
+            <div class="state"><br><i class="fa-solid fa-volleyball"></i><br><h1>Activity</h1></div>
+            
+            <div class="form">
+                <input placeholder='Title' name="title" ngModel #title="ngModel" type="text" required >
+                <ng-container *ngIf="title.touched">
+                       <div class="errorMessage" *ngIf="title.errors?.['required']">
+                          Title is required
+                       </div>
+                </ng-container>
+               
+
+                
+                
+
+
+             <input placeholder='Description'name="description"  ngModel #description="ngModel" type="text" >
+            
+
+             <input  class="imageInput" id="image" placeholder='Image url' name="image" ngModel #image="ngModel" type="text" required >
+             <ng-container *ngIf="image.touched">
+                <div class="errorMessage" *ngIf="image.errors?.['required']">
+                  Image is required
+                </div>
+            </ng-container >
+         
+                
+
+                
+             <div class="selectContainer">
+                <label id="selectLabel"  for="location">Select ground: </label>
+                <select id="selector" name="location"  ngModel="BEACH" #location="ngModel" required>
+                   <option selected value="BEACH">on the beach</option>
+                   <option value="POOL">in the pool</option>
+                   <option value="NEXT_TO_THE_POOL">next to the pool</option>
+                   <option value="HOTEL">in the hotel</option>  
+                   </select>
+                   <ng-container *ngIf="location.touched">
+                    <div class="errorMessage" *ngIf="location.errors?.['required']">
+                       Ground is required
+                    </div>
+             </ng-container>
+            </div>
+
+              <button class="login" [disabled]="createForm.invalid">
+                    Create</button>
+
+
+            
+            
+                    
+                    
+            </div>
+            
+        </form>
+        
+    </div>
+    
+</div>

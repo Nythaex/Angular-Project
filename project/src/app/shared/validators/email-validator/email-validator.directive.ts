@@ -20,25 +20,25 @@ export class EmailValidatorDirective implements Validator{
 
   constructor() { }
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-    return EmailValidatorDirective.validateEmail(this.appEmailValidator)
+    
+    return EmailValidatorDirective.validateEmail()(control);
     
   }
   // registerOnValidatorChange?(fn: () => void): void {
   //   throw new Error('Method not implemented.');
   // }
-  static validateEmail(appEmailValidator:String|undefined): ValidatorFn{
+  static validateEmail(): ValidatorFn{
+    
     return(control)=>{
       
-      if(appEmailValidator===undefined){return null};
-      const regex:RegExp=new RegExp(/^\w{5,}@\w+$/);
+      const regex:RegExp=new RegExp(/^\w{5,}@\w+.\w+$/);
       if(!regex.test(control.value)){
         if(control.value===''){
-          return {appEmailValidator:false};
+          return null;
         }
         return {appEmailValidator:true};
       }else{  
-        
-        return {appEmailValidator:false};
+        return null;
       }  
     }    
   }

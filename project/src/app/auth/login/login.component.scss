@@ -7,7 +7,9 @@
     background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
     height: 90vh;
     box-sizing: border-box;
+    flex-direction: column;
 }
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -19,6 +21,7 @@ body {
 }
 .panel {
     display: flex;
+    
     justify-content: center;
     align-items: center;
     width: 40rem;
@@ -31,6 +34,8 @@ body {
           box-shadow: 0 0 10px black;
   background: #141519;
   margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 .panel .state {
@@ -165,4 +170,42 @@ body {
   color: #a807f3;
   font-size: 1rem;
   padding: 1rem;
+}
+
+
+@media (max-width:650px) {
+  .panel{
+    align-items: flex-start;
+    width: 22rem;
+    height: 28rem;
+  }
+
+  .panel input {
+    width: 17rem;
+    height: 2rem;
+  }
+  .state>i{
+    font-size:  2.5rem;
+  }
+  .state>h1{
+    margin: 0.5rem;
+    font-size:  2.5rem;
+  }
+  .state{
+    padding: 0;
+    margin: 0.5rem;
+    font-size:  2.5rem;
+  }
+  .errorMessage{
+    padding: 0.5rem;
+  }
+  .panel .login{
+    margin-top: 2rem;
+  }
+  .container{
+    height: auto;
+  }
+  
+
+
 }

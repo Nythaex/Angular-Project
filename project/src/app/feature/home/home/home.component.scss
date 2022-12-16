@@ -117,3 +117,9 @@ i{
       
   
   }
+
+  @media (max-width: 750px) {
+    #WorkingTimeContainer>p{
+        font-size: 2rem;
+        padding: 0;
+    }}
