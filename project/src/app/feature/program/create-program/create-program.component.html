@@ -1,0 +1,75 @@
+
+<div class="container">
+    <div class="panel">
+        <form #createForm="ngForm" (ngSubmit)="createProgram(createForm)">
+          
+            <div class="state"><br><i class="fa-solid fa-clapperboard"></i><h1>Animation Porgram</h1></div>
+            
+               <div class="programTime">Morning</div>
+
+            <div class="selectContainer">
+                <div  class="time">9:00 </div>
+               
+                <select id="selector" name="activity1"  ngModel=1  >
+                   <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                   </select>
+            </div>
+
+            <div class="selectContainer">
+                <div  class="time">10:00 </div>
+                
+                <select id="selector" name="activity2"  ngModel=1  >
+                  <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                  </select>
+            </div>
+
+            <div class="selectContainer">
+                <div  class="time">11:00 </div>
+                <select id="selector" name="activity3"  ngModel=1  >
+                  <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                  </select>
+            </div>
+
+
+            <div class="programTime">Afternoon</div>
+
+                
+            <div class="selectContainer">
+                <div  class="time">16:00 </div>
+                
+                <select id="selector" name="activity4"  ngModel=1  >
+                  <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                  </select>
+            </div>
+
+            <div class="selectContainer">
+                <div  class="time">17:00 </div>
+              
+                <select id="selector" name="activity5"  ngModel=1  >
+                  <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                  </select>
+            </div>
+
+            <div class="selectContainer">
+                <div  class="time">18:00 </div>
+               
+                <select id="selector" name="activity6"  ngModel=1  >
+                  <option  *ngFor="let activity of activities" [value]="activity.id" >{{activity.title}}</option>
+                  </select>
+            </div>
+
+ 
+              <button class="login" [disabled]="createForm.invalid">
+                    Change Porgram</button>
+
+
+            
+            
+                    
+                  
+            
+        </form>
+        
+    </div>
+    
+</div>

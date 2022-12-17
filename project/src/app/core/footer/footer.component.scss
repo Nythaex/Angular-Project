@@ -19,6 +19,10 @@ i{
     margin-right: 1rem;
     
 }
+svg{
+  text-align: center;
+  font-size: 1.5rem;
+}
 p:hover,div:hover,i:hover{
     color: #a807f3;
 }
@@ -34,5 +38,9 @@ p,i,div{
     align-items: center;
     
   }
-
+  svg{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
 }

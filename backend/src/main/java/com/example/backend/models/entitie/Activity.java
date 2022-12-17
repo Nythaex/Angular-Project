@@ -4,13 +4,14 @@ package com.example.backend.models.entitie;
 import com.example.backend.models.enums.Location;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Activity extends BasicEntity{
     public Activity() {
     }
 
-    public Activity(String title, Location location, String description,String image) {
+    public Activity(String title, String location, String description,String image) {
         this.title = title;
         this.location = location;
         this.description = description;
@@ -21,9 +22,9 @@ public class Activity extends BasicEntity{
     String title;
 
     @Column
-    Location location;
+    String location;
 
-    @Column
+    @Column(length = 110000)
     String description;
 
     @Column
@@ -38,11 +39,11 @@ public class Activity extends BasicEntity{
         return this;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public Activity setLocation(Location location) {
+    public Activity setLocation(String location) {
         this.location = location;
         return this;
     }

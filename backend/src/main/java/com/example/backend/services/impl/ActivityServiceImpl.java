@@ -5,6 +5,8 @@ import com.example.backend.repositories.ActivityRepository;
 import com.example.backend.services.ActivityService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ActivityServiceImpl implements ActivityService {
     private final ActivityRepository activityRepository;
@@ -21,6 +23,12 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public void saveActivity(Activity activity) {
+        System.out.println(activity.getImage());
        activityRepository.save(activity);
+    }
+
+    @Override
+    public List<Activity> getAll() {
+       return activityRepository.findAll();
     }
 }

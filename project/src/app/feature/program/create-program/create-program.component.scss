@@ -5,7 +5,7 @@
 .container{
     display: flex;
     background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
-    height: 100vh;
+  
     box-sizing: border-box;
     flex-direction: column;
 }
@@ -19,13 +19,24 @@ body {
   background: linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), linear-gradient(90deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
   overflow: hidden;
 }
+.time{
+    color: white;
+    font-size: 3rem;
+}
+.programTime{
+    color: #a807f3;
+    font-size: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    border-bottom: #a807f3 0.3rem solid;
+}
 .panel {
     display: flex;
     
     justify-content: center;
     align-items: center;
-    width: 40rem;
-    height: 40rem;
+    width: 50%;
+    height: 120rem;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px;
@@ -44,6 +55,7 @@ body {
   height: 155px;
   color: #a807f3;
   font-size: 20px;
+  margin-bottom: 2.5rem;
 }
 .panel .state i.fa-ban {
   font-size: 40px;
@@ -68,13 +80,13 @@ body {
   margin: 5px auto;
 }
 .panel .login {
-  height: 45px;
-  width: 100%;
+  height: 60px;
+  width: 80%;
   background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
   -webkit-border-radius: 45px;
      -moz-border-radius: 45px;
           border-radius: 45px;
-  position: relative;
+  
   line-height: 45px;
   text-align: center;
   font-weight: bold;
@@ -85,7 +97,8 @@ body {
        -o-transition: background .2s;
           transition: background .2s;
   cursor: pointer;
-  width: 80%;
+  font-size: 1.5rem;
+  margin-top: 10rem;
 }
 .panel .login:active {
   -webkit-transform: translateY(2px);
@@ -163,7 +176,7 @@ body {
 .login:hover{
  padding: 0.2rem;
 }
-.fa-unlock-keyhole{
+.fa-clapperboard{
    font-size: 3rem;
 }
 
@@ -173,40 +186,131 @@ body {
   padding: 1rem;
 }
 
+.fa-volleyball{
+    font-size: 4rem;
+}
 
-@media (max-width:650px) {
-  .panel{
-    align-items: flex-start;
-    width: 22rem;
-    height: 28rem;
-  }
 
-  .panel input {
-    width: 17rem;
-    height: 2rem;
-  }
-  .state>i{
-    font-size:  2.5rem;
-  }
-  .state>h1{
-    margin: 0.5rem;
-    font-size:  2.5rem;
-  }
-  .state{
-    padding: 0;
-    margin: 0.5rem;
-    font-size:  2.5rem;
-  }
-  .errorMessage{
+
+.custom-file-upload {
+    position: relative;
+    font-size:  1.5rem;
+    color: #616973;
+    cursor: pointer;
+    margin:1rem ;
+    background-color: dark;
+    border: 1 solid;
+    
+    border: 0.2px solid #a807f3;
     padding: 0.5rem;
+    border-radius: 1rem;
+    
+}
+
+.custom-file-upload:hover {
+    color: #a807f3;
+    font-size: 1.6rem;
+
+}
+
+
+.selectContainer{
+   margin-top: 3rem ;
+   margin-bottom: 2rem;
+   font-size: 2rem;
+}
+
+#selectLabel{
+    color: #a807f3;
+   font-size: 1.7rem;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+#selector{
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    color: #a807f3;
+    padding-left: 0.5rem;
+    width: 30vw;
+}
+#selector>option{
+    border-radius: 2rem;
+    font-size: 3rem;
+    width: 30vw;
+     background-color: #22232a;
+ }
+ 
+ #selector:not(:checked) {
+    background-color: #22232a;
   }
-  .panel .login{
-    margin-top: 2rem;
+
+
+
+  @media (max-width:1000px) {
+    #selector {
+      font-size: 2rem;
+    }
+    #selector>option {
+      font-size: 2rem;
+     
+    }
   }
-  .container{
-    height: auto;
+
+  @media (max-width:650px) {
+    .panel{
+      width: 22rem;
+      height: 70rem;
+    }
+    #selector {
+      font-size: 1rem;
+    }
+    #selector>option {
+      font-size: 1rem;
+     
+    }
+    .time{
+      font-size: 1rem;
+    }
+    .programTime{
+      font-size: 2rem;
+      margin: 0;
+      margin-top: 1rem;
+    }
+
+    .panel input {
+      width: 17rem;
+      height: 2rem;
+    }
+    .state>i{
+      font-size:  2.5rem;
+    }
+    .state>h1{
+      margin: 0.5rem;
+      font-size:  2.5rem;
+    }
+    .state{
+      margin: 0.5rem;
+      font-size:  2.5rem;
+    }
+    .errorMessage{
+      padding: 0.5rem;
+    }
+    .panel .login{
+      margin-top: 2rem;
+    }
+    #selectLabel{
+      margin: 1rem 0rem;
+      font-size: 1.5rem;
+    }
+    .container{
+      height: auto;
+    }
   }
   
 
-
-}
+    
+  

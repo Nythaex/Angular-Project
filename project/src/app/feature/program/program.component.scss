@@ -20,7 +20,7 @@
    
     font-size: 2rem;
     text-decoration: none;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .nav-link:hover{
@@ -28,3 +28,155 @@
     color: white;
    
 }
+
+
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    
+    background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
+    
+   
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: -webkit-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -webkit-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: -moz-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -moz-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: -o-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -o-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), linear-gradient(90deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  overflow: hidden;
+}
+.panel {
+  flex-direction: column;
+    display: flex;
+   
+    align-items: center;
+    width: 80%;
+  
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px black;
+     -moz-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  background: #141519;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.panel .state {
+  
+  width: 100%;
+  height: 155px;
+  color: #a807f3;
+  font-size: 20px;
+}
+.panel .state i.fa-ban {
+  font-size: 40px;
+}
+.panel .state i.fa-unlock-alt {
+  font-size: 25px;
+  color: #a807f3;
+  line-height: 33px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  border: 2px solid;
+}
+.panel .state h2 {
+  font-weight: 400;
+}
+.panel .form {
+  width: 340px;
+  margin: 5px auto;
+}
+
+
+
+.panel .fack a:link {
+  color: #616973;
+}
+.panel .fack a:visited {
+  color: #555c65;
+}
+
+.state{
+    padding-bottom: 5rem;
+}
+
+
+
+
+
+
+.fa-clapperboard{
+  font-size: 5rem;
+}
+.state>h1{
+  font-size: 3rem;
+}
+.activityContainer{
+  border-radius: 1rem;
+  width: 80%;
+  margin: 5rem 0;
+  border: #a807f3 0.2rem solid;
+  display: flex;
+  flex-direction: column;
+}
+.activityProps{
+  display: flex;
+  flex-direction: row;
+}
+
+.time{
+  color: white;
+  font-size: 2rem;
+}
+.programTime{
+  font-size: 3rem;
+  color: white;
+}
+
+
+
+
+  @media (max-width:650px) {
+    .panel{
+      align-items: center;
+      width: 80%;
+    }
+
+    .panel input {
+      width: 17rem;
+      height: 2rem;
+    }
+    .state>i{
+      font-size:  2.5rem;
+    }
+    .state>h1{
+      margin: 0.5rem;
+      font-size:  2.5rem;
+    }
+    .state{
+      padding: 0;
+      margin: 0.5rem;
+      font-size:  2.5rem;
+    }
+    .container{
+      height: auto;
+    }
+
+  }
+  
+
+

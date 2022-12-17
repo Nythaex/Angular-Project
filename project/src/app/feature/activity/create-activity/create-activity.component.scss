@@ -86,6 +86,7 @@ body {
        -o-transition: background .2s;
           transition: background .2s;
   cursor: pointer;
+  width: 80%;
 }
 .panel .login:active {
   -webkit-transform: translateY(2px);
@@ -178,9 +179,6 @@ body {
 }
 
 
-.imageInput{
-   
-}
 .custom-file-upload {
     position: relative;
     font-size:  1.5rem;

@@ -2,7 +2,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, Observable, Subscription, tap } from 'rxjs';
-import { IUser } from '../model';
+import { IUser } from '../shared/model';
+
 
 @Injectable({
   providedIn: 'root'

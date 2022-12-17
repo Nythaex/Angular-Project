@@ -5,7 +5,7 @@
         <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
       </div>
       <div class="nav right">
-        <a routerLink="/program" *ngIf="isLogedIn()===false" class="nav-link "><span class="nav-link-span"><span class="u-nav">Program</span></span></a>
+        <a routerLink="/program" class="nav-link "><span class="nav-link-span"><span class="u-nav">Program</span></span></a>
         <a routerLink="/auth/register" *ngIf="isLogedIn()===false" class="nav-link "><span class="nav-link-span"><span class="u-nav">Register</span></span></a>
         <a routerLink="/auth/login" *ngIf="isLogedIn()===false" class="nav-link "><span class="nav-link-span"><span class="u-nav">Login</span></span></a>
         <a routerLink="/auth/logout" *ngIf="isLogedIn()===true" class="nav-link"><span class="nav-link-span"><span class="u-nav">Logout</span></span></a>

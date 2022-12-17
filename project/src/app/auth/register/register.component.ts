@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/services/auth-service.service';
+
 import { EmailValidatorDirective } from 'src/app/shared/validators/email-validator/email-validator.directive';
 import { matchPasswordValidator } from 'src/app/shared/validators/password-match-validator';
 import { SecretKeyValidatorDirective } from 'src/app/shared/validators/secret-key-validator/secret-key-validator.directive';
+import { AuthService } from '../auth-service.service';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class RegisterComponent  {
     this.authService.register(username!,email!,password!,confirmPassword!).subscribe({
       next:(user)=>{
         if(this.authService.isLoggedIn){
-          this.route.navigate(["menu"])
+          this.route.navigate(["/"])
         }
       
       }

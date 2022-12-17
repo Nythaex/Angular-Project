@@ -32,11 +32,11 @@
                 
              <div class="selectContainer">
                 <label id="selectLabel"  for="location">Select ground: </label>
-                <select id="selector" name="location"  ngModel="BEACH" #location="ngModel" required>
-                   <option selected value="BEACH">on the beach</option>
-                   <option value="POOL">in the pool</option>
-                   <option value="NEXT_TO_THE_POOL">next to the pool</option>
-                   <option value="HOTEL">in the hotel</option>  
+                <select id="selector" name="location"  ngModel="on the beach" #location="ngModel" required>
+                   <option selected value="on the beach">on the beach</option>
+                   <option value="in the pool">in the pool</option>
+                   <option value="next to the pool">next to the pool</option>
+                   <option value="in the hotel">in the hotel</option>  
                    </select>
                    <ng-container *ngIf="location.touched">
                     <div class="errorMessage" *ngIf="location.errors?.['required']">

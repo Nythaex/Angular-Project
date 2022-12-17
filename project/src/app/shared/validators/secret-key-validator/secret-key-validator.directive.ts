@@ -28,7 +28,7 @@ export class SecretKeyValidatorDirective implements Validator{
       
       
       
-      if(control.value!=="123"){
+      if(control.value!=="kP.2L~]3>Q~d5/A*u:GO[#XH_0%!Aa"){
         if(control.value===""){
           return null;
         }

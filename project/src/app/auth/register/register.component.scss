@@ -4,7 +4,7 @@
 
 .container{
     display: flex;
-    height: 90vh;
+    height: 105vh;
     background: -webkit-linear-gradient(45deg, #a807f3, #383bf1);
     
    
@@ -84,6 +84,7 @@ body {
        -o-transition: background .2s;
           transition: background .2s;
   cursor: pointer;
+  width: 80%;
 }
 .panel .login:active {
   -webkit-transform: translateY(2px);
