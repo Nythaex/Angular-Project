@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 
 public class RegisterBinding {
 
-    private String username;
+
 
 
     private String email;
@@ -13,8 +13,8 @@ public class RegisterBinding {
 
     private String password;
 
-    public RegisterBinding(String username, String email, String password) {
-        this.username = username;
+    public RegisterBinding( String email, String password) {
+
         this.email = email;
         this.password = password;
     }
@@ -22,14 +22,7 @@ public class RegisterBinding {
     public RegisterBinding() {
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public RegisterBinding setUsername(String username) {
-        this.username = username;
-        return this;
-    }
 
     public String getEmail() {
         return email;

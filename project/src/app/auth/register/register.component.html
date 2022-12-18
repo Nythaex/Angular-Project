@@ -3,15 +3,6 @@
         <form  [formGroup]="registerForm" (ngSubmit)="register()">
             <div class="state"><br><i class="fa-solid fa-id-card"></i><br><h1>Register</h1></div>
             <div class="form">
-                <input placeholder='Username' type="text" formControlName="username">
-                <ng-container *ngIf="registerForm.get('username')?.touched">
-                    <div class="errorMessage" *ngIf="registerForm.get('username')?.errors?.['required']">
-                        Username is required
-                     </div>
-                    <div class="errorMessage" *ngIf="registerForm.get('username')?.errors?.['minlength']">
-                      Username must be at least 6 symbols 
-                   </div>
-                </ng-container>
                 
                 <input placeholder='Email' type="text"  formControlName="email" >
                 <ng-container *ngIf="registerForm.get('email')?.touched">
@@ -21,6 +12,9 @@
                      <div class="errorMessage" *ngIf="registerForm.get('email')?.errors?.['appEmailValidator']">
                       Email is is incorect 
                    </div>
+                   <div class="errorMessage" *ngIf=" emailExists">
+                    Email already exists
+                 </div>
                 </ng-container>
 
                 <ng-container formGroupName="passwordGroup">

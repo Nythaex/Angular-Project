@@ -16,4 +16,6 @@ export class ActivityService {
    getAllOnlyIdAndTitle(){
     return this.http.get<IActivityIdAndTitle[]>("/api/activities/getAll/onlyTitle");
    }
+
+   
 }

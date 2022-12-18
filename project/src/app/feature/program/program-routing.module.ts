@@ -1,4 +1,5 @@
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "src/app/shared/guards/auth.guard";
 import { CreateProgramComponent } from "./create-program/create-program.component";
 import { ProgramComponent } from "./program.component";
 
@@ -9,7 +10,8 @@ const routes:Routes=[
     }, 
     {
         path:'change',
-        component:CreateProgramComponent
+        component:CreateProgramComponent,
+        canActivate: [AuthGuard]
        }
  ];
  

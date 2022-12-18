@@ -8,10 +8,11 @@ import { SecretKeyValidatorDirective } from './validators/secret-key-validator/s
 
 
 
+
 @NgModule({
   declarations: [
     EmailValidatorDirective,
-    SecretKeyValidatorDirective
+    SecretKeyValidatorDirective,
   ],
   imports: [
     CommonModule

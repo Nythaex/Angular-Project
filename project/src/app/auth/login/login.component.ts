@@ -20,7 +20,7 @@ export class LoginComponent  {
         this.authService.login(loginProp.email,loginProp.password).subscribe({
           next:(user)=>{
             if(this.authService.isLoggedIn){
-              this.route.navigate(["menu"])
+              this.route.navigate(["program"])
             }
            
           }

@@ -30,10 +30,13 @@ export class AuthService {
     this.subscription = this.user$.subscribe(user => {
       this.user = user;
    })}
+   checkExists(email:String){
+    
+    return this.http.post<Boolean>("/api/auth/email-exists",{email});
+   }
 
-
-   register(username:string,email:string,password:string,rePassword:string):Observable<IUser>{
-    return this.http.post<IUser>("/api/auth/register",{username,email,password,rePassword}).pipe(tap(user => this.user$$.next(user)));
+   register(email:string,password:string,rePassword:string):Observable<IUser>{
+    return this.http.post<IUser>("/api/auth/register",{email,password,rePassword}).pipe(tap(user => this.user$$.next(user)));
     
    }
    login(email:string,password:string):Observable<IUser>{

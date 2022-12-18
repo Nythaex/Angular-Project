@@ -28,7 +28,6 @@ public class AuthResource {
         }
 
         User user = new User();
-        user.setUsername(registerBinding.getUsername());
         user.setEmail(registerBinding.getEmail());
         user.setPassword(registerBinding.getPassword());
 
@@ -47,6 +46,13 @@ public class AuthResource {
             return ResponseEntity.badRequest().build();
         }
 
+        Boolean checked=userService.checkLogin(loginBinding.getEmail(),loginBinding.getPassword());
+        System.out.println(checked);
+        if (!checked){
+
+            return ResponseEntity.badRequest().build();
+        }
+
         return ResponseEntity.ok(user);
 
     }
@@ -54,6 +60,13 @@ public class AuthResource {
     @PostMapping("/auth/logout")
     public void logoutUser(){
 
+    }
+
+    @ResponseStatus( HttpStatus.OK )
+    @PostMapping("/auth/email-exists")
+    public ResponseEntity<Boolean> existsEmail(@RequestBody LoginBinding loginBinding){
+
+        return ResponseEntity.ok(userService.existByEmail(loginBinding.getEmail()));
     }
 
 }

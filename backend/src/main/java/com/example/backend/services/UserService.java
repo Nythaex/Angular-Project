@@ -10,5 +10,6 @@ public interface UserService {
       User getUserByEmail(String username);
      User getUser(Long id);
      boolean existByEmail(String value);
-     boolean existByUsername(String value);
+
+    Boolean checkLogin(String email, String password);
 }

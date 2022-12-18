@@ -14,21 +14,28 @@ export class AuthGuard implements CanActivate {
     constructor(private authService:AuthService,private router:Router){}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        console.log(1);
+       
+
+        if(!this.authService.isLoggedIn){
+           this.router.navigate(["/auth/login"]);
+        }
+        return this.authService.isLoggedIn
+
+        
             
-        return this.authService.isLoggedIn===route.data['loginRequired'];
-        // this.authService.user$.pipe(
+        // return this.authService.isLoggedIn===route.data['loginRequired'];
+      //  return this.authService.user$.pipe(
           
-        //   map(user => {
-        //     const loginRequired = route.data['loginRequired'];
-        //     console.log(loginRequired);
+      //     map(user => {
+      //       const loginRequired = route.data['loginRequired'];
+      //       console.log(loginRequired);
             
-        //     if (loginRequired === undefined || !!user === loginRequired) { return true; }
-        //     const returnUrl = route.url.map(u => u.path).join('/');
-        //     return !!user ?
-        //       this.router.createUrlTree(['/'], { queryParams: { returnUrl } }) :
-        //       this.router.createUrlTree(['/auth/login'], { queryParams: { returnUrl } });
-        //   })
-        // );
+      //       if (loginRequired === undefined || !!user === loginRequired) { return true; }
+      //       const returnUrl = route.url.map(u => u.path).join('/');
+      //       return !!user ?
+      //         this.router.createUrlTree(['/'], { queryParams: { returnUrl } }) :
+      //         this.router.createUrlTree(['/auth/login'], { queryParams: { returnUrl } });
+      //     })
+      //   );
    
 }}
